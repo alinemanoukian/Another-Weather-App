@@ -13,14 +13,12 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { StoreModule } from '@ngrx/store';
 import { locationReducer } from './location-reducer';
-import { FormsModule } from '@angular/forms';;
-import { WeatherService } from './weather.service';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { FormsModule } from '@angular/forms';
+import { WeatherService } from './services/weather.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CurrentWeatherComponent } from './current-weather/current-weather.component';
-import { ForecastComponent } from './forecast/forecast.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+import { CurrentWeatherComponent } from './components/current-weather/current-weather.component';
+import { ForecastComponent } from './components/forecast/forecast.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -45,9 +43,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     HttpClientModule,
     MatDividerModule,
     MatListModule,
-    NbThemeModule.forRoot({ name: 'default' }),
-    NbLayoutModule,
-    NbEvaIconsModule
   ],
   providers: [
     WeatherService

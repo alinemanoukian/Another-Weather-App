@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { WeatherService } from '../weather.service';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'app-forecast',

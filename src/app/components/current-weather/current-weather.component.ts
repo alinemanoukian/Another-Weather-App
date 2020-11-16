@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { WeatherService } from '../weather.service';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'app-current-weather',
@@ -11,7 +11,7 @@ import { WeatherService } from '../weather.service';
 export class CurrentWeatherComponent implements OnInit {
   loc$: Observable<string>;
   loc: string;
-  currentWeather: any = <any>{};
+  currentWeather: any = {} as any;
   msg: string;
   constructor(
     private store: Store<any>,
@@ -21,7 +21,7 @@ export class CurrentWeatherComponent implements OnInit {
     this.loc$.subscribe(loc => {
       this.loc = loc;
       this.searchWeather(loc);
-    })
+    });
   }
   ngOnInit() {
   }
@@ -39,7 +39,7 @@ export class CurrentWeatherComponent implements OnInit {
         }
         alert('Failed to get weather.');
       }, () => {
-})
+});
   }
   resultFound() {
     return Object.keys(this.currentWeather).length > 0;
